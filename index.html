@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parts of Speech - Learning Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+
+    h1, h2 {
+      color: #ff3333;
+    }
+
+    p {
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    ul {
+      color: #f0f0f0;
+    }
+
+    mark {
+      background-color: #ff3333;
+      color: #fff;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .toggle-btn {
+      margin-top: 30px;
+      background: #ff3333;
+      color: #000;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .quiz-section {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .question {
+      margin-bottom: 30px;
+    }
+
+    .choices button {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 12px;
+      border: 2px solid #ff3333;
+      background: #000;
+      color: #ff3333;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .choices button:hover {
+      background: #ff3333;
+      color: #000;
+    }
+
+    .choices button.correct {
+      background-color: #00cc66;
+      border-color: #00cc66;
+      color: #000;
+    }
+
+    .choices button.incorrect {
+      background-color: #cc0000;
+      border-color: #cc0000;
+      color: #fff;
+    }
+
+    .feedback {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Understanding Parts of Speech</h1>
+  <p>In English, every word has a role. These roles are called <strong>Parts of Speech</strong>. Learning them helps us understand how sentences work. There are 8 common parts of speech:</p>
+
+  <h2>1. Noun</h2>
+  <p>A <mark>noun</mark> is a word that names a person, place, thing, or idea. <br>Example: <em>Rina, Jakarta, pencil, lovecat, mountain, freedom, water, teacher, music, computer, happiness, friend, and time. 
+  </em></p>
+  <h2>2. Pronoun</h2>
+  <p>A <mark>pronoun</mark> replaces a noun to avoid repetition. <br>Example: <em>I, you, they, we, she, it, </em></p>
+  <h2>3. Verb</h2>
+  <p>A <mark>verb</mark> shows an action or a state of being. <br>Example: <em>walk, eat, is, sleep, run, eat, swim, think, create, discover, become, help, study, laugh.</em></p>
+  <h2>4. Adjective</h2>
+  <p>An <mark>adjective</mark> describes a noun or pronoun. <br>Example: <em>happy, big, blue, interesting, loud, soft, brave, shiny, delicious, careful, beautiful, tall, red.</em></p>
+  <h2>5. Adverb</h2>
+  <p>An <mark>adverb</mark> describes a verb, adjective, or another adverb. <br>Example: <em>quickly, very, well, , silently, fortunately, often, here, almost, easily, always, outside, soon, well.</em></p>
+  <h2>6. Preposition</h2>
+  <p>A <mark>preposition</mark> shows the relationship between a noun/pronoun and another word. <br>Example: <em> in, on, front, behind, under, above, beside, between, around, at.</em></p>
+  <h2>7. Conjunction</h2>
+  <p>A <mark>conjunction</mark> connects words or groups of words. <br>Example: <em>for, and, nor, but, also, yet, so, because, although, while, since, unless, until, as.</em></p>
+  <h2>8. Interjection</h2>
+  <p>An <mark>interjection</mark> shows emotion or sudden feeling. <br>Example: <em>Wow!, Oh!, Hey.,!Hey!, Oops!, Ah!, Hmm., Phew!, Yikes!, Hurray!, Shhh!, Bravo!.</em></p>
+  <button class="toggle-btn" onclick="toggleQuiz()">Try the Quiz</button>
+
+  <div class="quiz-section" id="quizSection">
+    <h2>Parts of Speech Quiz</h2>
+
+    <div class="question">
+      <p><strong>1. She runs very <mark>quickly</mark> every morning.</strong></p>
+      <div class="choices">
+        <button onclick="checkAnswer(this, 'adverb')">A. Noun</button>
+        <button onclick="checkAnswer(this, 'adverb')">B. Verb</button>
+        <button onclick="checkAnswer(this, 'adverb')">C. Adjective</button>
+        <button onclick="checkAnswer(this, 'adverb', true)">D. Adverb</button>
+        <div class="feedback"></div>
+      </div>
+    </div>
+
+    <div class="question">
+      <p><strong>2. The <mark>beautiful</mark> flower bloomed in the garden.</strong></p>
+      <div class="choices">
+        <button onclick="checkAnswer(this, 'adjective', true)">A. Adjective</button>
+        <button onclick="checkAnswer(this, 'adjective')">B. Verb</button>
+        <button onclick="checkAnswer(this, 'adjective')">C. Pronoun</button>
+        <button onclick="checkAnswer(this, 'adjective')">D. Conjunction</button>
+        <div class="feedback"></div>
+      </div>
+    </div>
+
+    <div class="question">
+        <p><strong>3. <mark>wow!</mark> the car exploded.</strong></p>
+        <div class="choices">
+          <button onclick="checkAnswer(this, 'Interjection')">A. Adjective</button>
+          <button onclick="checkAnswer(this, 'Interjection')">B. Verb</button>
+          <button onclick="checkAnswer(this, 'Interjection',  true)">C. Interjection</button>
+          <button onclick="checkAnswer(this, 'Interjection')">D. Conjunction</button>
+          <div class="feedback"></div>
+        </div>
+      </div>
+
+    <div class="question">
+       <p><strong>4. book<mark>and</mark> pen are my weapons.</strong></p>
+       <div class="choices">
+          <button onclick="checkAnswer(this, 'Conjunction')">A. Noun</button>
+          <button onclick="checkAnswer(this, 'Conjunction')">B. Verb</button>
+          <button onclick="checkAnswer(this, 'Conjunction')">C. Adjective</button>
+          <button onclick="checkAnswer(this, 'Conjunction', true)">D. Conjunction</button>
+          <div class="feedback"></div>
+       </div>
+   </div>
+
+    <div class="question">
+    <p><strong>5. I want to go to <mark>Sweeden</mark>.</strong></p>
+    <div class="choices">
+       <button onclick="checkAnswer(this, 'Noun', true)">A. Noun</button>
+       <button onclick="checkAnswer(this, 'Noun')">B. Verb</button>
+       <button onclick="checkAnswer(this, 'Noun')">C. Adjective</button>
+       <button onclick="checkAnswer(this, 'Noun')">D. Conjunction</button>
+       <div class="feedback"></div>
+    </div>
+    </div>
+
+    <div class="question">
+        <p><strong>6. I park my car <mark>in</mark> my garage.</strong></p>
+        <div class="choices">
+          <button onclick="checkAnswer(this, 'prepostion')">A. Adjective</button>
+          <button onclick="checkAnswer(this, 'prepostion')">B. Verb</button>
+          <button onclick="checkAnswer(this, 'prepostion',  true)">C. Prepostion</button>
+          <button onclick="checkAnswer(this, 'prepostion')">D. Conjunction</button>
+          <div class="feedback"></div>
+        </div>
+      </div>
+</div>
+
+    
+
+<script>
+  function toggleQuiz() {
+    const quiz = document.getElementById("quizSection");
+    quiz.style.display = quiz.style.display === "none" || quiz.style.display === "" ? "block" : "none";
+  }
+
+  function checkAnswer(button, correctAnswer, isCorrect = false) {
+    const buttons = button.parentElement.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.disabled = true;
+      if (btn === button && isCorrect) {
+        btn.classList.add('correct');
+      } else if (btn === button && !isCorrect) {
+        btn.classList.add('incorrect');
+      }
+    });
+
+    const feedback = button.parentElement.querySelector('.feedback');
+    feedback.textContent = isCorrect ? "Correct!" : "Oops! That's incorrect.";
+  }
+</script>
+
+</body>
+</html>
